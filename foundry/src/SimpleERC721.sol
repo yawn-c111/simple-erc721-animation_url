@@ -9,11 +9,12 @@ contract SimpleERC721 is ERC721 {
 
     mapping(uint256 => string) private _tokenURIs;
 
-    constructor(string memory name, string memory symbol)
-        ERC721(name, symbol)
-    {}
+    constructor(
+        string memory name,
+        string memory symbol
+    ) ERC721(name, symbol) {}
 
-    function mintNft(string memory imageJson) public {
+    function mintNft(string memory animation_url) public {
         uint256 tokenId = ++_tokenId;
         _safeMint(msg.sender, tokenId);
         _tokenURIs[tokenId] = string(
@@ -23,8 +24,8 @@ contract SimpleERC721 is ERC721 {
                     abi.encodePacked(
                         '{"description": "',
                         name(),
-                        '", "image": "',
-                        imageJson,
+                        '", "animation_url": "',
+                        animation_url,
                         '", "name": "',
                         name(),
                         " #",
@@ -41,12 +42,9 @@ contract SimpleERC721 is ERC721 {
         _burn(tokenId);
     }
 
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        override
-        returns (string memory)
-    {
+    function tokenURI(
+        uint256 tokenId
+    ) public view override returns (string memory) {
         _requireMinted(tokenId);
         string memory _tokenURI = _tokenURIs[tokenId];
         return _tokenURI;
