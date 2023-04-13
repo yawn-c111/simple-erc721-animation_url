@@ -1,7 +1,9 @@
 <svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 512 512"
 >
-  <image href="https://i.imgur.com/zHFaD7x.png" x="0" y="0" />
-  <image href="https://i.imgur.com/ARnpSGM.png" x="0" y="0" />
-  <image href="https://i.imgur.com/eF19aoC.png" x="0" y="0" />
+  <image xlink:href="https://i.imgur.com/zHFaD7x.png" x="0" y="0" width="512" height="512" />
+  <image xlink:href="https://i.imgur.com/ARnpSGM.png" x="0" y="0" width="512" height="512" />
+  <image xlink:href="https://i.imgur.com/eF19aoC.png" x="0" y="0" width="512" height="512" />
 </svg>
